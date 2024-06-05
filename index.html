@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluacion JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="js/bus.js" type="text/javascript"></script>
+    <script src="js/funciones.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div class="container"> <!--contenedor-->
+        <h1>DATOS DEL BUS</h1>
+
+        <div id="mensajes"></div>
+
+        <div class="row">
+            <div class="col-4">
+                <label for="txtnom" class="form-label">Número de Placa</label>
+                <div class="input-group"> 
+                    <input type="text" class="form-control" id="txt_placa"/>
+                    <button class="btn btn-primary" onclick="consultar();">...</button>
+                </div>
+            </div>
+        
+            <div class="col-4">
+                <label for="txtape" class="form-label">Número de Serie</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="txt_serie"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <label for="txtape" class="form-label">Kilometraje Actual</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="txt_kilo"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-4">
+                <label for="txtape" class="form-label">Capacidad del Tanque de Combustible</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="txt_capa_com"/>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-4">
+                <label for="txtape" class="form-label">Capacidad de Pasajeros</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="txt_pasa"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label for="cbo_mar" class="form-label">Marca</label>
+                <div class="row">
+                    <div class="col">
+                        <select class="form-select" id="cbo_mar">
+                            <option value="">SELECCIONE MARCA</option>
+                            <option value="VOLVO">VOLVO</option>
+                            <option value="MERCEDES-BENZ">MERCEDES-BENZ</option>
+                            <option value="SCANIA">SCANIA</option>
+                            <option value="MAN">MAN</option>
+                            <option value="IRIZAR">IRIZAR</option>
+                            <option value="MARCOPOLO">MARCOPOLO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="row">
+
+            <div class="col-4">
+                <label class="form-check-label">Estado</label>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="op_est" id="op_est_ope" value="Operativo" checked>
+                            <label class="form-check-label" for="op_est_ope">Operativo</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="op_est" id="op_est_man" value="Mantenimiento">
+                            <label class="form-check-label" for="op_est_man">En Mantenimiento</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <label for="txtape" class="form-label">Año de Fabricación</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="number" class="form-control" id="txt_año" min="1"/>
+                    </div>
+                </div>
+            </div>            
+            
+            <div class="col-4">
+                <label for="txtape" class="form-label">Peso del autobús</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="number" class="form-control" id="txt_peso" min="1"/>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <br>
+
+        <div class="row">
+
+            <div class="col-4">
+                <label for="cbo_color" class="form-label">Color</label>
+                <div class="row">
+                    <div class="col">
+                        <select class="form-select" id="cbo_color">
+                            <option value="">SELECCIONE COLOR</option>
+                            <option value="ROJO">ROJO</option>
+                            <option value="AZUL">AZUL</option>
+                            <option value="VERDE">VERDE</option>
+                            <option value="AMARILLO">AMARILLO</option>
+                            <option value="BLANCO">BLANCO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label class="form-check-label">Tipo de Servicio</label>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="optipo" id="optiponormal" value="NORMAL" checked>
+                            <label class="form-check-label" for="optiponormal">Normal</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="optipo" id="optipoturistico" value="TURÍSTICO">
+                            <label class="form-check-label" for="optipoturistico">Turístico</label>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+
+            <div class="col-4">
+                <label for="cbocombustible" class="form-label">Tipo de Combustible</label>
+                <div class="row">
+                    <div class="col">
+                        <select class="form-select" id="cbocombustible">
+                            <option value="">SELECCIONE COMBUSTIBLE</option>
+                            <option value="DIÉSEL">DIÉSEL</option>
+                            <option value="GASOLINA">GASOLINA</option>
+                            <option value="HÍBRIDO">HÍBRIDO</option>
+                            <option value="ELÉCTRICO">ELÉCTRICO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="row"> <!--botones registrar/modificar/eliminar-->
+            <div class="col-4">
+                <button class="btn btn-primary btn-lg" style="width:100%;" onclick="registrar();" >Registrar</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary btn-lg" style="width:100%;" onclick="modificar()" >Modificar</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary btn-lg" style="width:100%;" onclick="eliminar()" >Eliminar</button>
+            </div>
+        </div>
+
+        <br>
+
+        <table class="table table-bordered table-hover"> <!--tabla-->
+            <thead>
+                <tr>
+                    <th>Número de Placa</th>
+                    <th>Número de Serie</th>
+                    <th>Kilometraje Actual</th>
+                    <th>Capacidad del Tanque de Combustible</th>
+                    <th>Capacidad de Pasajeros</th>
+                    <th>Marca</th>
+                    <th>Estado</th>
+                    <th>Año de Fabricación</th>
+                    <th>Peso del autobús</th>
+                    <th>Color</th>
+                    <th>Tipo de Servicio</th>
+                    <th>Tipo de Combustible</th>                    
+                </tr>
+            </thead>
+            <tbody id="tabladedatos"> 
+            </tbody>
+        </table>
+    </div>
+    
+    <footer class="footer" style="background-color: #333; color: white;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <span class="navbar-text">
+                    <strong>Sitio desarrollado por:</strong> Bernardo Vera
+                </span>
+            </div>
+        </nav>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
